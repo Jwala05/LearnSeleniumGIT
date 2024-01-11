@@ -1,0 +1,18 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - newPushGIT
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Run Script
+      run: | 
+      mvn test
